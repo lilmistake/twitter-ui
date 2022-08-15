@@ -22,4 +22,8 @@ class CustomIcons {
   static const String? _kFontPkg = null;
 
   static const IconData sparkles = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData comment = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData retweet = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData heart = IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData share = IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }
