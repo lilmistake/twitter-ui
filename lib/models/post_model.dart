@@ -1,13 +1,22 @@
+import 'package:twitter_ui/models/profile_model.dart';
+
 class Post {
-  final String handle;
-  final String name;
+  final Profile author;
+
   final String image;
-  final String profilePicture;
   final int likes;
   final int rts;
   final int comments;
   final String timeStamp;
+  final String content;
 
-  Post(this.handle, this.name, this.image, this.profilePicture, this.likes, this.rts, this.comments,
-      this.timeStamp);
+  Post(
+      {required this.image,
+      required this.likes,
+      required this.rts,
+      required this.comments,
+      required this.timeStamp,
+      required this.author,
+      required this.content
+      });
 }
