@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twitter_ui/components/bottom_navigation_bar.dart';
 import 'components/components.dart';
 import 'data/data.dart';
 
@@ -33,6 +34,9 @@ class MyApp extends StatelessWidget {
               }, childCount: twitterPosts.length))
             ],
           ),
-        )));
+        ),
+        bottomNavigationBar: const MyBottomNavigationBar()
+        )
+        );
   }
 }
