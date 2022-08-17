@@ -11,7 +11,7 @@ class TwitterPosts extends StatelessWidget {
   Widget build(BuildContext context) {
     Post post = twitterPosts[index];
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 2), // space bw posts
+      margin: const EdgeInsets.symmetric(vertical: 0.3), // space bw posts
       color: Colors.white,
       padding: const EdgeInsets.only(bottom: 10, top: 10),
       child: Row(
