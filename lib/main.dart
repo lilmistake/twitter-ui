@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:twitter_ui/components/bottom_navigation_bar.dart';
-import 'components/components.dart';
-import 'data/data.dart';
+import 'package:twitter_ui/pages/pages.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -12,31 +11,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Scaffold(
-            body: Container(
-          color: Colors.grey[350],
-          child: CustomScrollView(
-            slivers: [
-              const MyAppbar(),
-              const Stories(),
-              const SliverToBoxAdapter(
-                child: Divider(
-                  height: 3,
-                ),
-              ),
-              SliverList(
-                  delegate: SliverChildBuilderDelegate((context, index) {
-                return TwitterPosts(
-                  index: index,
-                );
-              }, childCount: twitterPosts.length))
-            ],
-          ),
-        ),
-        bottomNavigationBar: const MyBottomNavigationBar()
-        )
+        home: HomePage(bottomNavigationBar: MyBottomNavigationBar(),)
         );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class SearchPage extends StatelessWidget {
   final Widget bottomNavigationBar;
@@ -8,11 +9,22 @@ class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Center(
-          child: Text(
-        "Search",
-        style: TextStyle(fontSize: 50),
-      )),
+      body: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              systemOverlayStyle: const SystemUiOverlayStyle(
+                  statusBarColor: Colors.white,
+                  statusBarIconBrightness: Brightness.dark),
+              backgroundColor: Colors.white,
+              foregroundColor: Colors.blue,
+              leading: const Icon(Icons.menu),
+              title: const Text("Search"),
+              actions: [
+                IconButton(onPressed: () {}, icon: const Icon(Icons.settings))
+              ],
+            )
+          ],        
+      ),
       bottomNavigationBar: bottomNavigationBar,
     );
   }
