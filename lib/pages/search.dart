@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'package:twitter_ui/components/components.dart';
 class SearchPage extends StatelessWidget {
   final Widget bottomNavigationBar;
   const SearchPage({Key? key, required this.bottomNavigationBar})
@@ -17,7 +17,6 @@ class SearchPage extends StatelessWidget {
                   statusBarIconBrightness: Brightness.dark),
               backgroundColor: Colors.white,
               foregroundColor: Colors.blue,
-              leading: const Icon(Icons.menu),
               title: const Text("Search"),
               actions: [
                 IconButton(onPressed: () {}, icon: const Icon(Icons.settings))
@@ -25,6 +24,7 @@ class SearchPage extends StatelessWidget {
             )
           ],        
       ),
+      drawer: const MyAppDrawer(),
       bottomNavigationBar: bottomNavigationBar,
     );
   }

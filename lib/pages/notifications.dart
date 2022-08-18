@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:twitter_ui/components/components.dart';
 class NotificationsPage extends StatelessWidget {
   final Widget bottomNavigationBar;
   const NotificationsPage({Key? key, required this.bottomNavigationBar})
@@ -16,7 +17,6 @@ class NotificationsPage extends StatelessWidget {
                   statusBarIconBrightness: Brightness.dark),
               backgroundColor: Colors.white,
               foregroundColor: Colors.blue,
-              leading: const Icon(Icons.menu),
               title: const Text("Notifications"),
               actions: [
                 IconButton(onPressed: () {}, icon: const Icon(Icons.settings))
@@ -24,6 +24,7 @@ class NotificationsPage extends StatelessWidget {
             )
           ],        
       ),
+      drawer: const MyAppDrawer(),
       bottomNavigationBar: bottomNavigationBar,
     );
   }

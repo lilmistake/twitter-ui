@@ -31,6 +31,7 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
+        drawer: const MyAppDrawer(),
         bottomNavigationBar: const MyBottomNavigationBar());
   }
 }

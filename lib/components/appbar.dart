@@ -8,8 +8,8 @@ class MyAppbar extends StatelessWidget with PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverAppBar(      
-      systemOverlayStyle: const SystemUiOverlayStyle(          
+    return SliverAppBar(
+      systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarColor: Colors.white,
           statusBarIconBrightness: Brightness.dark),
       backgroundColor: Colors.white,
@@ -18,10 +18,13 @@ class MyAppbar extends StatelessWidget with PreferredSizeWidget {
         color: Colors.blue,
         size: 35,
       ),
-      leading: const Icon(
-        Icons.menu,
-        color: Colors.blue,
-        size: 30,
+      leading: IconButton(
+        onPressed: () => Scaffold.of(context).openDrawer(),
+        icon: const Icon(
+          Icons.menu,
+          color: Colors.blue,
+          size: 30,
+        ),
       ),
       actions: [
         Container(

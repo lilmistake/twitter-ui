@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:twitter_ui/components/drawer.dart';
 
 class MessagesPage extends StatelessWidget {
   final Widget bottomNavigationBar;
@@ -17,7 +18,6 @@ class MessagesPage extends StatelessWidget {
                   statusBarIconBrightness: Brightness.dark),
               backgroundColor: Colors.white,
               foregroundColor: Colors.blue,
-              leading: const Icon(Icons.menu),
               title: const Text("Messages"),
               actions: [
                 IconButton(onPressed: () {}, icon: const Icon(Icons.settings))
@@ -25,6 +25,7 @@ class MessagesPage extends StatelessWidget {
             )
           ],        
       ),
+      drawer: const MyAppDrawer(),
       bottomNavigationBar: bottomNavigationBar,
     );
   }
