@@ -36,15 +36,41 @@ pageNavigationRoute(
   return BottomNavigationBarItem(
       icon: IconButton(
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) {
-            if(page == 'SEARCH'){ return const SearchPage(bottomNavigationBar: MyBottomNavigationBar(),);}
-            if(page == 'HOME'){ return const HomePage(bottomNavigationBar: MyBottomNavigationBar(),);}
-            if(page == 'MIC'){ return const SpacesPage(bottomNavigationBar: MyBottomNavigationBar(),);}
-            if(page == 'NOTIFICATIONS'){ return const NotificationsPage(bottomNavigationBar: MyBottomNavigationBar(),);}
-            if(page == 'MESSAGES'){ return const MessagesPage(bottomNavigationBar: MyBottomNavigationBar(),);}                        
-            return const SearchPage(bottomNavigationBar: MyBottomNavigationBar(),);
-          }));
-        },
+          Navigator.push(
+              context,
+              PageRouteBuilder(
+                  pageBuilder: ((context, animation, secondaryAnimation) {
+                    if (page == 'SEARCH') {
+                      return const SearchPage(
+                        bottomNavigationBar: MyBottomNavigationBar(),
+                      );
+                    }
+                    if (page == 'HOME') {
+                      return const HomePage(
+                        bottomNavigationBar: MyBottomNavigationBar(),
+                      );
+                    }
+                    if (page == 'MIC') {
+                      return const SpacesPage(
+                        bottomNavigationBar: MyBottomNavigationBar(),
+                      );
+                    }
+                    if (page == 'NOTIFICATIONS') {
+                      return const NotificationsPage(
+                        bottomNavigationBar: MyBottomNavigationBar(),
+                      );
+                    }
+                    if (page == 'MESSAGES') {
+                      return const MessagesPage(
+                        bottomNavigationBar: MyBottomNavigationBar(),
+                      );
+                    }
+                    return const SearchPage(
+                      bottomNavigationBar: MyBottomNavigationBar(),
+                    );
+                  }),                
+                  transitionDuration: const Duration(milliseconds: 0)));
+                          },
         icon: Icon(icon),
         color: color,
       ),
